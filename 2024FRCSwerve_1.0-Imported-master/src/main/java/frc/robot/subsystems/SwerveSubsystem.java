@@ -52,7 +52,7 @@ public class SwerveSubsystem extends SubsystemBase {
     
     //Gets our Gyro and it's CAN number (the number is what number is assigned to it on the CAN bus)
     private final static Pigeon2 gyro = new Pigeon2(0);
-    private final SwerveDriveOdometry odometer = new SwerveDriveOdometry(DriveConstants.kDriveKinematics, new Rotation2d(0), null);
+    private final SwerveDriveOdometry odometer = new SwerveDriveOdometry(DriveConstants.kDriveKinematics, gyro.getRotation2d(), new SwerveModulePosition[]{frontLeft.getPosition(), frontRight.getPosition(), backLeft.getPosition(), backRight.getPosition()});;
 
 
     public SwerveSubsystem(){
